@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+    .hidden {
+    display: none;
+}
+</style>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Logged In S00185812</title>
+      
+      </head>
+      <script src="https://sdk.amazonaws.com/js/aws-sdk-2.799.0.min.js"></script>
+      <script language="JavaScript" type="text/javascript" src="/js/jquery-1.2.6.min.js"></script> 
+      <script language="JavaScript" type="text/javascript" src="/js/jquery-ui-personalized-1.5.2.packed.js"></script> 
+      <script language="JavaScript" type="text/javascript" src="/js/sprinkle.js"></script> 
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
+      <script language="JavaScript" type="text/javascript" src="js/main.js"></script> 
+
+<body>
+
+    <h1>Logged In Successfully</h1>
+    <button onclick="SignOut()">Sign Out</button>
+    
+    <br> 
+
+    <br> 
+
+    <select name="adds" id="who-to-add">
+        <option>Choose who to add</option>
+        <option value="1">Student</option>
+        <option value="2">Teacher</option>
+        <option value="3">Class</option>
+    </select>
+
+    <br>
+    <br>
+
+    <div class="answer hidden" id="answer1">
+        <input type="number" id="IDStudent" placeholder="ID">
+        <input type="text" id="firstNameStudent" placeholder="First Name"> 
+        <input type="text" id="lastNameStudent" placeholder="Last Name"> 
+        <input type="number" id="ageStudent" placeholder="Age">
+        <input type="number" id="teacherIDStudent" placeholder="Teacher ID">
+        <input type="email" id="email" placeholder="E-mail">
+
+        <select id="yearToSelect" onchange="selectYear()">
+            <option value="First Year">First Year</option>
+            <option value="Second Year">Second Year</option>
+            <option value="Third Year">Third Year</option>
+            <option value="Fourth Year">Fourth Year</option>
+            <option value="Fifth Year">Fifth Year</option>
+            <option value="Sixth Year">Sixth Year</option>
+        </select>
+
+        <button onclick="AddStudent()">Add Student</button>
+
+    </div>
+
+    <div class="answer hidden" id="answer3">
+        <input type="number" id="IDClass" placeholder="ID">
+        <input type="text" id="ClassName" placeholder="Class Name"> 
+        <input type="number" id="teacherIDClass" placeholder="Teacher ID">
+    
+        <button onclick="AddClass()">Add Class</button>
+    </div>
+
+    <div class="answer hidden" id="answer2">
+        <input type="number" id="IDTeacher" placeholder="ID">
+        <input type="text" id="firstNameTeacher" placeholder="First Name"> 
+        <input type="text" id="lastNameTeacher" placeholder="Last Name"> 
+
+    
+        <button onclick="AddTeacher()">Add Teacher</button>
+    </div>
+
+    <br>
+
+    Search Student ID: <input type="text" id="SearchID" value="1">
+    <button onclick="SearchStudentID()">Search Student ID</button>
+
+    <p id="fullName"> Enter An ID </p>
+
+    <p id="answer"></p>
+
+    <script src="js/vendor/jquery-3.1.0.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/vendor/aws-cognito-sdk.min.js"></script>
+    <script src="js/vendor/amazon-cognito-identity.min.js"></script>
+    <script src="https://js.arcgis.com/4.3/"></script>
+    <script src="js/config.js"></script>
+    <script src="js/cognito-auth.js"></script>
+    <script src="js/esri-map.js"></script>
+    <script src="js/ride.js"></script>
+
+    <script>
+    $(document).ready(function(){
+        $('#who-to-add').on('change', function(){
+            var theVal = $(this).val();
+            $('.answer').addClass('hidden');
+            $('.answer#answer' + theVal).removeClass('hidden');
+        });
+    });
+
+    $(document).keydown(function(e){
+    if(e.which === 123){ 
+       return false; 
+    } 
+});
+    </script>
+</body>
+
+</html>

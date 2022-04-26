@@ -1,0 +1,41 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/main.css">
+  <title>Register S00185812</title>
+
+</head>
+
+<body>
+  <h1>Registration Page</h1>
+
+  <button onclick="goLogin()">Try Login</button>
+  <br>
+  <br>
+  <form id="registrationForm">
+    <input type="email" id="emailInputRegister" placeholder="Email" pattern=".*" required>
+    <br>
+    <input type="password" id="passwordInputRegister" placeholder="Password" pattern=".*" required>
+    <br>
+    <input type="password" id="password2InputRegister" placeholder="Confirm Password" pattern=".*" required>
+    <br>
+    <input type="submit" value="Register">
+  </form>
+</body>
+
+<script src="js/vendor/jquery-3.1.0.js"></script>
+<script src="js/vendor/bootstrap.min.js"></script>
+<script src="js/vendor/aws-cognito-sdk.min.js"></script>
+<script src="js/vendor/amazon-cognito-identity.min.js"></script>
+<script src="js/config.js"></script>
+<script src="js/cognito-auth.js"></script>
+
+<script>
+  function goLogin(){
+    window.location.href = 'login.html';
+  }
+</script>
+</html>
